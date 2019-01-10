@@ -1,0 +1,29 @@
+{
+  "name": "nextjs-example",
+  "profile": "my-aws-account-for-lambda",
+  "regions": ["ap-northeast-2"],
+  "lambda": {
+    "memory": 256,
+    "runtime": "nodejs8.10"
+  },
+  "proxy": {
+    "command": "npm start",
+    "timeout": 25,
+    "listen_timeout": 15,
+    "shutdown_timeout": 15
+  },
+  "stages": {
+    "development": {
+      "proxy": {
+        "command": "yarn dev"
+      }
+    }
+  },
+  "environment": {},
+  "error_pages": {
+    "variables": {
+      "support_email": "myaccount@my.com",
+      "color": "#2986e2"
+    }
+  }
+}
