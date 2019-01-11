@@ -128,16 +128,16 @@ IAM policy allows the Up to access your AWS resources in order to deploy your Ne
 
 ## Create `up.json` file
 
-```json
+```js
 {
   "name": "nextjs-example",
-  # aws account profile in ~/.aws/credentials
+  // aws account profile in ~/.aws/credentials
   "profile": "my-aws-account-for-lambda",
   "regions": ["ap-northeast-2"],
   "lambda": {
-    # min 128, default 512
+    // min 128, default 512
     "memory": 256,
-    # AWS Lambda supports node.js 8.10 latest
+    // AWS Lambda supports node.js 8.10 latest
     "runtime": "nodejs8.10"
   },
   "proxy": {
@@ -154,7 +154,7 @@ IAM policy allows the Up to access your AWS resources in order to deploy your Ne
     }
   },
   "environment": {
-    # you can hydrate env variables as you want.
+    // you can hydrate env variables as you want.
     "NODE_ENV": "production"
   },
   "error_pages": {
