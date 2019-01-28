@@ -2,6 +2,8 @@
 
 This is a tiny example to show how to deploy the Next.js app on AWS Lambda using [Apex Up](https://up.docs.apex.sh/#introduction).
 
+- Post : https://mattdamon108.github.io/post/react/1/2019-01-11-Deploy-Nextjs-app-to-AWS-Lambda/
+
 ## Next.js app with custom server
 
 The custom server for Next.js app is needed to run your app on AWS Lambda. In this example, `express` will be used.
