@@ -2,7 +2,7 @@
 
 This is a tiny example to show how to deploy the Next.js app on AWS Lambda using [Apex Up](https://up.docs.apex.sh/#introduction).
 
-- Post : https://mattdamon108.github.io/post/react/1/2019-01-11-Deploy-Nextjs-app-to-AWS-Lambda/
+- Post : https://moondaddi.dev/post/2019-01-11-Deploy-Nextjs-app-to-AWS-Lambda/
 
 ## Next.js app with custom server
 
@@ -11,12 +11,12 @@ The custom server for Next.js app is needed to run your app on AWS Lambda. In th
 ```javascript
 // server.js
 
-const express = require("express");
-const next = require("next");
+const express = require('express');
+const next = require('next');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
-const dev = process.env.NODE_ENV !== "production";
-const app = next({ dev });
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({dev});
 const handle = app.getRequestHandler();
 
 app
@@ -24,15 +24,15 @@ app
   .then(() => {
     const server = express();
 
-    server.get("/", (req, res) => {
-      return app.render(req, res, "/", req.params);
+    server.get('/', (req, res) => {
+      return app.render(req, res, '/', req.params);
     });
 
-    server.get("/about", (req, res) => {
-      return app.render(req, res, "/about", req.params);
+    server.get('/about', (req, res) => {
+      return app.render(req, res, '/about', req.params);
     });
 
-    server.get("*", (req, res) => {
+    server.get('*', (req, res) => {
       return handle(req, res);
     });
 
